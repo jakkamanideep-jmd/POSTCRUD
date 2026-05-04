@@ -1,0 +1,28 @@
+{% extends "parent_inherit.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+
+
+{% block content %}
+{% with messages=get_flashed_messages() %}
+    {% if messages %}
+        {% for mesg in messages %}
+            <h3>{{mesg}}</h3>
+        {% endfor %} 
+    {% endif %}
+{% endwith %}           
+
+        <img src="{{url_for('static',filename='profile_pic/'+post.author.image_file)}}">
+        <h2><a href=#>{{post.author.username}}</a></h2>
+        <p>{{post.date_posted.strftime('%Y-%m-%d')}}</p>
+        <h1><a href="{{url_for('posts.user_posts',username=post.author.username)}}">{{post.title}}</a></h1>
+        <p>{{post.content}}</p>
+        {% if post.author == current_user %}
+            <a href="{{ url_for('posts.update_post',post_id=post.id) }}">Update</a>
+            <a href="{{ url_for('posts.delete_post',post_id=post.id) }}">Delete</a>
+        {% endif %}    
+
+{% endblock %}

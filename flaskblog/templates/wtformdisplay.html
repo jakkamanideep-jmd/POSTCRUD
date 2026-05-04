@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <style type="text/css">
+       h1{
+            text-align: center;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <form action="/login" method="post">
+    <h1>THE FORM</h1>
+    {{ form.hidden_tag() }}
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for mesg in messages %}
+                <p>{{mesg}}</p>
+            {% endfor %} 
+        {% endif %}
+    {% endwith %}           
+    {%for mesg in form.name.errors %}
+        <p>{{mesg}}</p>
+    {% endfor %}    
+    {% for mesg in form.email.errors %}
+        <p>{{mesg}}</p>
+    {% endfor %}    
+    {{ form.name.label }} {{ form.name() }}
+    {{ form.gender.label }} {{ form.gender() }}
+    {{ form.address.label }}  {{ form.address() }}
+    {{ form.email.label }} {{ form.email() }}
+    {{ form.submit() }}
+    </form>
+</body>
+</html>

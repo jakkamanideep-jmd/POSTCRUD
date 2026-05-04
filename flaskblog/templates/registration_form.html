@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style type="text/css">
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+            margin: 0;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+        .container{
+            background-color:transparent;
+            border: 5px;
+            border-radius: 5px;
+            padding:10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            width: 500px;
+            text-align: center;
+        }
+        table{
+            padding: 10px;
+            border-spacing: 50px;
+            text-align: center;
+
+        }
+        input[name]{
+            border-radius: 5px;
+        }
+        input[name="FN"]:hover,input[name="PW"]:hover,input[name="PN"]:hover{
+            
+            border-radius: 6px;
+            background-color: #FF9933;
+            border-color: #FF9933;
+        }
+        input[name="LN"]:hover,input[name="RPW"]:hover,input[name="ADD"]:hover{
+            
+            border-radius: 6px;
+            background-color:#FFFFFF;
+            border-color: #FFFFFF;
+        }
+        input[name="UN"]:hover, input[name="EMAIL"]:hover, input[name="PC"]:hover{
+        
+            border-radius: 6px;
+            background-color: #138808;
+            border-color: #138808;
+        }
+
+        input[type="submit"]:hover{
+            background-color:lightblue;  
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        input[type="reset"]:hover{
+            background-color:lightgoldenrodyellow;
+            border-top-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+         input[type="submit"],input[type="reset"]{
+            border: 0px;
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <form action="/register" method="post">
+    <h1>REGISTRATION FORM</h1>
+        <abbr title="register below"><h2>Register below</h2></abbr>
+        <table>
+        <tr><td>   
+        <label style="font-size: larger;">First name:</label></td><td><input type="text" name="FN" placeholder="Firstname" required size="15px" minlength="6px" maxlength="10px" pattern="[a-zA-Z0-9]+"></td></tr>
+        <tr><td>   
+        <label style="font-size: larger;">lastname</label></td><td><input type="text" name="LN" placeholder="Lastname" required size="15px" minlength="6px" maxlength="10px" pattern="[a-zA-Z0-9]+"></td></tr>
+        <tr><td>   
+        <label style="font-size: larger;">username:</label></td><td><input type="text" name="UN" placeholder="Create new" required size="15px" minlength="10px" maxlength="20px" pattern="[a-zA-Z0-9]+"></td></tr>                
+        <tr><td>   
+        <label style="font-size: larger;">Password:</label></td><td><input type="password" name="PW" placeholder="Password" required size="15px" minlength="6px" maxlength="15px"></td></tr>   
+        <tr><td>   
+        <label style="font-size: larger;">Re enter:</label></td><td><input type="text" name="RPW" placeholder="Password again" required size="15px" minlength="6px" maxlength="10px"></td></tr>  
+        <tr><td>   
+        <label style="font-size: larger;">email:</label></td><td><input type="email" name="EMAIL" placeholder="your email" required size="15px" minlength="10px" maxlength="30px" pattern="[a-zA-Z0-9]+@[a-z]{1,5}.[a-z]+{3}"></td></tr>   
+        <tr><td>   
+        <label style="font-size: larger;">phonenumber:</label></td><td><input type="tel" name="PN" placeholder="your number" required size="15px" minlength="10px" maxlength="20px" pattern="[0-9]{10}"></td></tr>   
+        <tr><td>   
+        <label style="font-size: larger;">Address:</label></td><td><input type="text" name="ADD" placeholder="your address" size="15px" minlength="10px" maxlength="20px"></td></tr>   
+        <tr><td> 
+        <label style="font-size: larger;">Pincode:</label></td><td><input type="tel" name="PC" placeholder="pincode" required size="15px" minlength="10px" maxlength="20px"></td></tr>   
+        
+    
+    
+    </table>
+          
+    <span class="submit"><input type="submit"></span>
+    <span class="reset"><input type="reset"></span>
+    </form>
+
+    </div>
+
+</body>
+</html>

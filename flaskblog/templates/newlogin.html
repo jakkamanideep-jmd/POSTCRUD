@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+    <head>
+        <title>login page</title>
+        <style type="text/css">
+        body
+        {
+          margin:0%;
+
+        }
+
+        .navigation
+        {
+         background-color:#333;
+        overflow: hidden;
+
+        }
+        a
+        {
+          display: block;
+          float: left;
+          padding: 14px 20px;
+          color:#f2f2f2;
+          text-align: center;
+          text-decoration: none;
+        }
+       .container
+        {
+          background-color: burlywood;
+          padding: 5px;
+          width: 350px;
+        border: 10px;
+        border-radius: 10px;
+        text-align: center;
+        }  
+        h1
+        {
+          text-decoration: dotted;
+          text-decoration-line: underline;
+        }
+        h1:hover{
+          color:chocolate
+        }
+       table
+       {
+        border-spacing: 15px;
+       }
+     input[placeholder]:hover{
+        background-color:pink;
+        border-color: chocolate;
+        padding: 10px;
+        border-radius:5px;
+ }
+ 
+        </style>
+    </head>
+   <body>
+   <div class="navigation">
+    <a href="{{ url_for('users.register') }}">register</a>
+   </div>     
+    <div class="container">  
+    <form action="/login_now" method="post">
+  
+      <h1>LOGIN PAGE</h1>
+          {% with messages=get_flashed_messages()%}
+        {% if messages %}
+            {% for mesg in messages %}
+                <h4>{{mesg}}</h4>
+            {% endfor %}
+        {% endif %} 
+    {% endwith %}   
+      <table>
+        <tr>
+        <td>
+        <label>username</label></td><td><input type="text" name="user_name" placeholder="enter username"></td><br></tr>
+        <tr>
+        <td><label>password</label></td><td><input type="password" name="password" placeholder="enter password"></td></tr>
+      </table>     
+      <input type="submit">
+      <input type="reset">
+    </form>  
+    </div>  
+  </body>

@@ -1,0 +1,17 @@
+{% extends "parent_inherit.html" %}
+
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+    <p>Welcome{{username}}</p>
+    {% for i in content %}
+    <table>
+        <tr>
+            <td>{{i.id}}</td>
+            <td>{{i.username}}</td>
+        </tr>
+    {% endfor %}    
+    </table>
+{% endblock %}

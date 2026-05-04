@@ -1,0 +1,30 @@
+{% extends "parent_inherit.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+
+{% block content %}
+    {% with messages=get_flashed_messages() %}
+        {% if messages %}
+            {% for mesg in messages %}
+                <h3>{{mesg}}</h3>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}     
+
+<div class="the_login">         
+<form action="{{url_for('users.reset_token',token=token)}}" method="post">
+{{ form.hidden_tag() }}
+<table>
+    <legend>Login</legend>
+    <tr><td> {{ form.password.label}} </td><td> {{ form.password()}} <br></td></tr>    
+    <tr><td> {{ form.confirm_password.label}} </td><td> {{ form.confirm_password()}} <br></td></tr>    
+
+    {{form.submit()}}
+ </table>
+
+</form>
+{% endblock %}
+
+</div>
