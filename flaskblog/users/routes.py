@@ -56,7 +56,7 @@ def logout():
 @users.route("/user")
 @login_required
 def user():
-    return render_template("user.html",username=current_user.username)
+    return render_template("user.html",username=current_user.username,title="userpage")
 
 
 @users.route("/account",methods=["POST","GET"])
