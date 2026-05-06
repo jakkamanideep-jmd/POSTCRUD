@@ -72,7 +72,7 @@ def account():
         db.session.commit()
         flash("your account details has successfully updated")
         return redirect(url_for("users.account"))
-    elif request.method == "POST":
+    elif request.method == "POST":  #even the uooer one is post but here ifrequest.method==post and if any errors in user or email
         for usr_err in form.username.errors:
             flash(usr_err)
         for email_err in form.email.errors:
