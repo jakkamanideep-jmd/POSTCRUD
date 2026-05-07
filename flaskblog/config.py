@@ -7,5 +7,5 @@ class config():
     MAIL_PORT=587
     MAIL_USE_TLS=True
     MAIL_USERNAME=os.environ.get('Email_username')
-    MAIL_PASSWORD=os.environ.get('Email_password')
+    MAIL_PASSWORD='gfzg diln exzh gzqm'
     MAIL_DEFAULT_SENDER="jakkamanideep@gmail.com"
