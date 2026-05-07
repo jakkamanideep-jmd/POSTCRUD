@@ -6,6 +6,7 @@ from flask_login import login_required,login_user,logout_user,current_user
 from flaskblog.users.forms import RegistrationForm,LoginForm,UpdateAccountForm,RequestResetForm,ResetPasswordForm
 from flaskblog.models import User,Post
 from flask_mail import Message
+
 users=Blueprint("users",__name__)
 
 @users.route("/register",methods=["POST","GET"])
@@ -115,7 +116,7 @@ def reset_token(token):
     form=ResetPasswordForm()
     if form.validate_on_submit():
         hashed_pw=bcrypt.generate_password_hash(form.password.data).decode("utf-8")
-        user.Password=hashed_pw
+        user.password=hashed_pw
         db.session.commit()
         flash("your password has been updated")
         return redirect(url_for('users.login'))
