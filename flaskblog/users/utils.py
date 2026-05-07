@@ -22,7 +22,7 @@ def send_reset_mail(user):
     token=user.get_reset_token()
     msg=Message("password_reset_mail",sender=current_app.config['MAIL_DEFAULT_SENDER'],recipients=[user.email])
     msg.body='''if you want to reset the password click the link below
-{url_for('users.reset_token,token=token,_external=True')}
+url_for('users.reset_token,token=token,_external=True')
     if you don't simply ignore this mail
 ''' 
     mail.send(msg)
