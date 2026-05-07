@@ -21,7 +21,7 @@ def save_image(form_picture):
 def send_reset_mail(user):
     token=user.get_reset_token()
     msg=Message("password_reset_mail",sender=current_app.config['MAIL_DEFAULT_SENDER'],recipients=[user.email])
-    link=url_for('users.reset_token,token=token,_external=True')
+    link=url_for('users.reset_token', token=token, _external=True)
     msg.body=f'''if you want to reset the password click the link below:
 {link}
     if you don't simply ignore this mail
