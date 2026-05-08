@@ -122,4 +122,4 @@ def reset_token(token):
         return redirect(url_for("users.login"))
     else:
         print(form.errors)
-        return render_template("reset_token.html",form=form,title='passwordreset')    
+        return render_template("reset_token.html",token=token,form=form,title='passwordreset')    
