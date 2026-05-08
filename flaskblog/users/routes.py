@@ -119,5 +119,5 @@ def reset_token(token):
         user.password=hashed_pw
         db.session.commit()
         flash("your password has been updated")
-        return redirect(url_for("login"))
+        return redirect(url_for("users.login"))
     return render_template("reset_token.html",form=form,title='passwordreset')    
