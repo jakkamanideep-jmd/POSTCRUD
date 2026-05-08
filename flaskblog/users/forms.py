@@ -61,7 +61,7 @@ class RequestResetForm(FlaskForm):
             return ValidationError("the email is not valid")
 
 class ResetPasswordForm(FlaskForm):
-    Password=PasswordField("password",validators=[DataRequired()])
-    confirm_password=PasswordField("confirm_password",validators=[DataRequired(),EqualTo(Password)])
+    password=PasswordField("password",validators=[DataRequired()])
+    confirm_password=PasswordField("confirm_password",validators=[DataRequired(),EqualTo('Password')])
     submit=SubmitField("send_mail")
 
