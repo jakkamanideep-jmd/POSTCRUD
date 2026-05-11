@@ -1,10 +1,10 @@
-from flaskblog.users.utils import send_reset_mail,save_image
+from POSTCRUD.users.utils import send_reset_mail,save_image
 from flask import Blueprint,current_app
 from flask import redirect,url_for,request,render_template,flash
-from flaskblog import bcrypt,db,mail
+from POSTCRUD import bcrypt,db,mail
 from flask_login import login_required,login_user,logout_user,current_user
-from flaskblog.users.forms import RegistrationForm,LoginForm,UpdateAccountForm,RequestResetForm,ResetPasswordForm
-from flaskblog.models import User,Post
+from POSTCRUD.users.forms import RegistrationForm,LoginForm,UpdateAccountForm,RequestResetForm,ResetPasswordForm
+from POSTCRUD.models import User,Post
 from flask_mail import Message
 
 users=Blueprint("users",__name__)

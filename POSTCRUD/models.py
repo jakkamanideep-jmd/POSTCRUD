@@ -1,4 +1,4 @@
-from flaskblog import db,login_manager
+from POSTCRUD import db,login_manager
 from flask import current_app
 from datetime import datetime
 from flask_login import UserMixin

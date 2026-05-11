@@ -1,8 +1,8 @@
 from flask import Blueprint,flash,redirect,url_for,render_template,abort,request
-from flaskblog import db
+from POSTCRUD import db
 from flask_login import login_user,logout_user,login_required,current_user
-from flaskblog.posts.forms import Postform
-from flaskblog.models import Post,User 
+from POSTCRUD.posts.forms import Postform
+from POSTCRUD.models import Post,User 
 posts=Blueprint("posts",__name__)
 
 @posts.route("/post/new",methods=["POST","GET"])
