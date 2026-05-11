@@ -96,6 +96,8 @@
             <a class="logout" href="{{url_for('users.logout')}}">logout</a>
             <a class="account" href="{{url_for('users.account')}}">account</a>
             <a class="newpost" href="{{url_for('posts.new_post')}}">NewPost</a>
+            <a class="home" href="{{url_for('main.home')}}">home</a>
+
         {% else %}
 
             <a class="home" href="{{url_for('main.home')}}">home</a>

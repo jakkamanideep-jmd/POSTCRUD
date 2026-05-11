@@ -25,8 +25,8 @@ class User(db.Model,UserMixin):
         s=serializer(current_app.config["SECRET_KEY"])
         try:
             user_id=s.loads(token,max_age=expires_sec)['user_id']
-        except:
-            None
+        except Exception:
+            return None
         return  User.query.get(user_id)        
 
 
