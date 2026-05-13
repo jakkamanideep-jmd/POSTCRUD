@@ -6,6 +6,6 @@ class config():
     MAIL_SERVER="smtp.googlemail.com"
     MAIL_PORT=587
     MAIL_USE_TLS=True
-    MAIL_USERNAME=os.environ.get('Email_username')
+    MAIL_USERNAME="jakkamanideep@gmail.com"
     MAIL_PASSWORD='gfzg diln exzh gzqm'
     MAIL_DEFAULT_SENDER="jakkamanideep@gmail.com"
