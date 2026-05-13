@@ -26,4 +26,7 @@ def send_reset_mail(user):
 {link}
     if you don't simply ignore this mail
 ''' 
-    mail.send(msg)
+    try:
+        mail.send(msg)
+    except Exception as e:
+        print("Mail error:", e)
