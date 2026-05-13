@@ -7,5 +7,5 @@ class config():
     MAIL_PORT=587
     MAIL_USE_TLS=True
     MAIL_USERNAME="jakkamanideep@gmail.com"
-    MAIL_PASSWORD='gfzg diln exzh gzqm'
+    MAIL_PASSWORD='zkji lhhf kuye zgtd'
     MAIL_DEFAULT_SENDER="jakkamanideep@gmail.com"
