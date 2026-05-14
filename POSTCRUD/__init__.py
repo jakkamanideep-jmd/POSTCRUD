@@ -17,12 +17,12 @@ mail=Mail()
 def create_app(config_class=config):
     app=Flask(__name__)
     app.config.from_object(config_class)
-
+    #giving init_app(app) for the extensions 
     db.init_app(app)
     bcrypt.init_app(app)
     login_manager.init_app(app)
     mail.init_app(app)
-
+   #blueprints registration code below ||
     from POSTCRUD.users.routes import users
     from POSTCRUD.posts.routes import posts
     from POSTCRUD.main.routes import main
