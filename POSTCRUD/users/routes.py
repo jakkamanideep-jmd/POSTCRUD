@@ -6,7 +6,9 @@ from flask_login import login_required,login_user,logout_user,current_user
 from POSTCRUD.users.forms import RegistrationForm,LoginForm,UpdateAccountForm,RequestResetForm,ResetPasswordForm
 from POSTCRUD.models import User,Post
 from flask_mail import Message
+from google import genai
 
+client=genai.Client(api_key="the_api")
 users=Blueprint("users",__name__)
 
 @users.route("/register",methods=["POST","GET"])
@@ -122,3 +124,23 @@ def reset_token(token):
     else:
         print(form.errors)
         return render_template("reset_token.html",form=form,title='passwordreset')    
+
+@user.route("/chat",methods=["POST","GET"])
+def chatbot():
+    reply=""
+    if request.method=="POST":
+        message=request.form.get('message')
+        if "hello" in  message.lower():
+            reply="hi there"
+        elif "bye" in message.lower():
+            reply="thank you for using chat"
+        else:
+            reply="i didnt get you"
+        response=client.models.generate_content(
+            model="gemini-2.5-flask",
+            content=message
+        )
+        airesponse=response.text
+
+        return render_template("chatbot.html",airesponse=airesponse,reply=reply)
+         
